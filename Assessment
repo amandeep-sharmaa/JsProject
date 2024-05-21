@@ -1,24 +1,17 @@
-/*
-Assessment Requirements
-1. Create a variable that can hold a number of NFT's. What type of variable might this be?
-2. Create an object inside your mintNFT function that will hold the metadata for your NFTs. 
-   The metadata values will be passed to the function as parameters. When the NFT is ready, 
-   you will store it in the variable you created in step 1
-3. Your listNFTs() function will print all of your NFTs metadata to the console (i.e. console.log("Name: " + someNFT.name))
-4. For good measure, getTotalSupply() should return the number of NFT's you have created
-*/
 
-// create a variable to hold your NFT's
+// variable to hold  NFT's
 const totalNFT=[];
-// this function will take in some values as parameters, create an
-// NFT object using the parameters passed to it for its metadata, 
-// and store it in the variable above.
-function mintNFT (name,age,bloodGroup,email,location,hobby) {
+
+// This function will accept a set of parameters, 
+// and use the parameters to generate an NFT object and its metadata,
+//then the result is saves in the above variable.
+function mintNFT (name,age,gender,email,profession,location,hobby) {
     const NFT ={
         "Name" : name,
         "Age" : age,
-        "BloodGroup" : bloodGroup,
+        "Gender" : gender,
         "Email" : email,
+        "Profession" : profession,
         "Location" : location,
         "Hobby" : hobby
     }
@@ -26,30 +19,32 @@ function mintNFT (name,age,bloodGroup,email,location,hobby) {
     console.log("Minted : "+ name+ "\n");
 }
 
-// create a "loop" that will go through an "array" of NFT's
-// and print their metadata with console.log()
+//"loop" to traverse a "array" of NFTs.
+//and print their metadata
 function listNFTs () {
     for(let i=0;i<totalNFT.length; i++) {
         console.log("Name        : " + totalNFT[i].Name);
         console.log("Age         : " + totalNFT[i].Age);
-        console.log("Blood Group : " + totalNFT[i].BloodGroup);
+        console.log("Gender      : " + totalNFT[i].Gender);
         console.log("Email       : " + totalNFT[i].Email);
+        console.log("Profession  : " + totalNFT[i].Profession)
         console.log("Location    : " + totalNFT[i].Location);
         console.log("Hobby       : " + totalNFT[i].Hobby + "\n");
     }
 
 }
 
-// print the total number of NFTs we have minted to the console
+//Function to Print the total number of NFTs we have minted to the console
 function getTotalSupply() {
-    console.log(totalNFT.length);
+    console.log("\nTotal Number of NFTs: " + totalNFT.length);
 }
 
-// call your functions below this line
+// calling the  functions 
 
-mintNFT("Joe","22","B-","randomjoe@gmail.com","India","Reading");
-mintNFT("Darwin ","27","O+","darwin@gmail.com","USA","Watching Movies");
-mintNFT("Rengoku ","20","B+","rengoku004@gmail.com","Japan","Playing Football");
-mintNFT("Jonathan","19","A+","jonathan987@gmail.com","Mexico","Playing Computer Games");
+mintNFT("Aman","22","Male","inspireamandeep1@gmail.com","Student","India","Reading");
+mintNFT("Darwin ","27","Male","darwin@gmail.com","Electrical Engineer" ,"USA","Watching Movies");
+mintNFT("Isabella","19","Female","isabella987@gmail.com","Student","Mexico","Playing Computer Games");
+mintNFT("Rengoku ","20","Male","rengoku004@gmail.com","Software Developer","Japan","Playing Football");
+
 listNFTs();
 getTotalSupply();
